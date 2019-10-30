@@ -1,5 +1,5 @@
 .background-video{
-  position: fixed;
+  position: absolute;
   right: 0; 
   bottom: 0;
   min-width: 100%; 
@@ -10,4 +10,8 @@
 }
 .mdl-layout-title{
     font-family: 'Nosifer', cursive !important;
+}
+
+.mdl-layout {
+  position: unset !important;
 }
