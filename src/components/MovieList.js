@@ -7,11 +7,19 @@ function MovieList(items) {
     <div>
       <h2>Films américains</h2>
       <div className="americanList">
-      {items.items.movies.filter(movie => movie.country === 'United_States').map(movie => <MovieCard {...movie} />)}
+      {items.items.movies.filter(movie => 
+        movie.country === 'United_States')
+        .slice(0, 7)
+        .map(movie => 
+        <MovieCard {...movie} />)} 
       </div>
       <h2>Films d'autres horizons</h2>
       <div className="frenchList">
-      {items.items.movies.filter(movie => movie.country !== 'United_States').map(movie => <MovieCard {...movie} />)}
+      {items.items.movies.filter(movie =>
+        movie.country !== 'United_States')
+        .slice(0, 7)
+        .map(movie =>
+        <MovieCard {...movie} />)}
       </div>
     </div>
   );
