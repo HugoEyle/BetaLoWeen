@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieList from './MovieList';
+import NavHeader from "./NavHeader"
 
 class Home extends React.Component {
     
@@ -31,6 +32,7 @@ class Home extends React.Component {
       //console.log(items.movies.filter(movies => movies.country === 'United_States'))
       return (
           <div className='Home'>
+            <NavHeader />
             <MovieList items={items} />
           </div>
       )
