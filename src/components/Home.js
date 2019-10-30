@@ -28,7 +28,7 @@ class Home extends React.Component {
     if (!isLoaded) {
       return <h2>Loading...</h2>;
     } else {
-      console.log(items.movies)
+      //console.log(items.movies.filter(movies => movies.country === 'United_States'))
       return (
           <div className='Home'>
             <MovieList items={items} />
