@@ -1,0 +1,70 @@
+* {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.filmsfilter {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.filter {
+    margin: 0 1rem;
+}
+
+.text_label {
+    margin: 0.4rem 0;
+}
+
+.title {
+    background-color: lightgrey;
+    border-color: grey;
+    border-radius: 0.3rem;
+    border-width: 0.1rem;
+}
+
+.title_filter {
+    margin: 0.4rem 0;
+    margin-top: 2rem;
+}
+
+.filter_title {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter_origin {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter_year {
+    display: flex;
+    flex-direction: column;
+}
+
+.button_origin, .button_year {
+    margin: 0.5rem;
+    border-radius: 0.3rem;
+    border-color: grey;
+    background-color: lightgrey;
+    padding: 0.4rem;
+    border-width: 0.1rem;
+}
+
+.testcard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.text_label,.title_filter {
+    font-family: 'Nosifer', cursive !important;
+    color: white;
+    text-shadow: 0px 0px 5px #B30410;
+}

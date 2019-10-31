@@ -68,7 +68,7 @@
   transition: 0.5s;
   text-transform: uppercase;
   margin-bottom: 15px;
-  font-size: 16px;
+  font-size: 13px;
   transform: translateY(200px);
 }
 .movieCard .box:hover .content .titleMovies{
@@ -78,7 +78,7 @@
 .movieCard .box .content p{
   color: #fff;
   transition: 0.5s;
-  font-size: 14px;
+  font-size: 11px;
   transform: translateY(200px);
 }
 .movieCard .box:hover .content p{
