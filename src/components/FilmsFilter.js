@@ -3,23 +3,28 @@ import './FilmsFilter.css';
 import Card from './Card';
 
 function FilmsFilter ({items, americanFilter, americanonly, frenchFilter, frenchonly, spainFilter, spainonly, year2019Filter, year2019, year2018Filter, year2018, year2010Filter, year2010, onChangeHandler, input}) {
+
+	const inputFilter = input.replace(' ', '_').substr(0,1).toUpperCase()+input.substr(1).replace(' ', '_')
+
 	return (
 		<div className='filmsfilter'>
-			<div className='filter_title'>
-				<label htmlFor='title '>Nom du film :</label>
-				<input id='title' type='text' value={input} onChange={onChangeHandler}/>
-			</div>
-			<div className='filter_origin'>
-				<p>Origin :</p>
-				<button className='button_origin' onClick={americanFilter}>American</button>
-				<button className='button_origin' onClick={frenchFilter}>French</button>
-				<button className='button_origin' onClick={spainFilter}>Spanish</button>
-			</div>
-			<div className='filter_year'>
-				<p>Years :</p>
-				<button className='button_year' onClick={year2019Filter}>2019</button>
-				<button className='button_year' onClick={year2018Filter}>2018</button>
-				<button className='button_year' onClick={year2010Filter}>2010</button>
+			<div className='filter'>
+				<div className='filter_title'>
+					<label htmlFor='title ' className='text_label'>Nom du film :</label>
+					<input id='title' type='text' value={input} onChange={onChangeHandler} className='title'/>
+				</div>
+				<div className='filter_origin'>
+					<p className='title_filter'>Origin :</p>
+					<button className='button_origin' onClick={americanFilter}>American</button>
+					<button className='button_origin' onClick={frenchFilter}>French</button>
+					<button className='button_origin' onClick={spainFilter}>Spanish</button>
+				</div>
+				<div className='filter_year'>
+					<p className='title_filter'>Years :</p>
+					<button className='button_year' onClick={year2019Filter}>2019</button>
+					<button className='button_year' onClick={year2018Filter}>2018</button>
+					<button className='button_year' onClick={year2010Filter}>2010</button>
+				</div>
 			</div>
 			<div className='testcard'>
 				{americanonly
@@ -47,7 +52,7 @@ function FilmsFilter ({items, americanFilter, americanonly, frenchFilter, french
 						.filter(movie => movie.year === 2010)
 						.map((movie, index) => <Card {...movie} />)
 					: items.movies
-						.filter(movie => input === '' || movie.title.includes(input))
+						.filter(movie => input === '' || movie.title.includes(inputFilter))
 						.map((movie, index) => (
 							<Card {...movie} />
 						))
@@ -55,10 +60,6 @@ function FilmsFilter ({items, americanFilter, americanonly, frenchFilter, french
 			</div>
 		</div>
 	)
-
-
 }
-
-
 
 export default FilmsFilter;

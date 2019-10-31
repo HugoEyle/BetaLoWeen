@@ -27,30 +27,48 @@ class Home extends React.Component {
 
   americanFilter() {
     this.setState({ americanonly : !this.state.americanonly })
+    this.setState({ frenchonly : false })
+    this.setState({ spainonly : false })
   }
 
   frenchFilter() {
     this.setState({ frenchonly : !this.state.frenchonly })
+    this.setState({ americanonly : false })
+    this.setState({ spainonly : false })
   }
 
   spainFilter() {
     this.setState({ spainonly : !this.state.spainonly })
+    this.setState({ frenchonly : false })
+    this.setState({ americanonly : false })
   }
 
   year2019Filter() {
     this.setState({ year2019 : !this.state.year2019 })
+    this.setState({ year2018 : false })
+    this.setState({ year2010 : false })
   }
 
   year2018Filter() {
     this.setState({ year2018 : !this.state.year2018 })
+    this.setState({ year2010 : false })
+    this.setState({ year2019 : false })
   }
 
   year2010Filter() {
     this.setState({ year2010 : !this.state.year2010 })
+    this.setState({ year2018 : false })
+    this.setState({ year2019 : false })
   }
 
   onChangeHandler(event) {
     this.setState({ input : event.target.value })
+    this.setState({ frenchonly : false })
+    this.setState({ spainonly : false })
+    this.setState({ americanonly : false })
+    this.setState({ year2010 : false })
+    this.setState({ year2019 : false })
+    this.setState({ year2018 : false })
   }
 
   componentDidMount () {
@@ -66,14 +84,13 @@ class Home extends React.Component {
   render() {
     
     const { isLoaded, items, americanonly, frenchonly, spainonly, year2019, year2018, year2010, input} = this.state
-    
+
     if (!isLoaded) {
       return <h2>Loading...</h2>;
     } else {
       
       return (
           <div className='Home'>
-            <p>{items.movies[0].title}</p>
             <FilmsFilter items={items} americanFilter={this.americanFilter} americanonly={americanonly} frenchFilter={this.frenchFilter} frenchonly={frenchonly} spainFilter={this.spainFilter} spainonly={spainonly} year2019Filter={this.year2019Filter} year2019={year2019} year2018Filter={this.year2018Filter} year2018={year2018} year2010Filter={this.year2010Filter} year2010={year2010} onChangeHandler={this.onChangeHandler} input={input} />
           </div>
       )
