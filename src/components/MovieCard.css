@@ -1,3 +1,102 @@
-.movieCard img{
-  width: 10rem/*118px*/;
+/* .movieCard img{
+  width: 10rem/;
+} */
+.movieCard{
+  position: relative;
+  width: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.movieCard .box{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 16em;
+  height: 15rem;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.movieCard .box:hover{
+  z-index: 1;
+  transform: scale(1.25);
+  box-shadow: 0 25px 40px rgba(0,0,0,.5);
+}
+.movieCard .box .imgBx{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.movieCard .box .imgBx::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(180deg,#f00,#000);
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transition: 0.5s;
+}
+.movieCard .box:hover .imgBx::before{
+  opacity: 1;
+}
+.movieCard .box .imgBx img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} 
+.movieCard .box .content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  padding: 20px;
+  align-items: flex-end;
+}
+.movieCard .box .content .titleMovies{
+  color: #fff;
+  transition: 0.5s;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-size: 16px;
+  transform: translateY(200px);
+}
+.movieCard .box:hover .content .titleMovies{
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+.movieCard .box .content p{
+  color: #fff;
+  transition: 0.5s;
+  font-size: 14px;
+  transform: translateY(200px);
+}
+.movieCard .box:hover .content p{
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+.titleMovies{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.containerInfo{
+  display: flex;
+  flex-direction: column;
+}
+.titleTitle{
+  font-weight: bold;
+  color: yellow;
+  
 }
