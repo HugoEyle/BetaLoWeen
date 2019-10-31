@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Layout, Header, Navigation, Drawer, Content, Textfield } from 'react-mdl';
 import BackGroundHome from './BackGroundHome';
+import { Link } from 'react-router-dom';
+
 
 export default class NavHeader extends Component {
     render() {
@@ -9,8 +11,8 @@ export default class NavHeader extends Component {
                     <Layout>
                         <Header transparent title="BetaLoWeen" style={{color: 'red', backgroundColor: 'black', fontWeight: 'bold'}}>
                             <Navigation>
-                                <a href="#">Home</a>
-                                <a href="#">Movies</a>
+                                <Link to='/'>Accueil</Link>
+                                <Link to='/filmsfilter'>Films</Link>
                                 <a href="https://giphy.com/gifs/black-and-white-killer-jeff-D3FHwEx3Ea3AI/fullscreen">Ma sélec'</a>
                                 <Textfield
                                     onChange={() => {}}
@@ -22,8 +24,8 @@ export default class NavHeader extends Component {
                         </Header>
                         <Drawer title="Title">
                             <Navigation>
-                                <a href="#">Home</a>
-                                <a href="#">Movies</a>
+                                <Link to='/'>Accueil</Link>
+                                <Link to='/filmsfilter'>Films</Link>
                                 <a href="https://giphy.com/gifs/black-and-white-killer-jeff-D3FHwEx3Ea3AI/fullscreen">Ma sélec'</a>
                                 <Textfield
                                     onChange={() => {}}
