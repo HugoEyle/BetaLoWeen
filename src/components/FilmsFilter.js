@@ -2,12 +2,12 @@ import React from 'react';
 import './FilmsFilter.css';
 import Card from './Card';
 
-function FilmsFilter ({items, americanFilter, americanonly, frenchFilter, frenchonly, spainFilter, spainonly, year2019Filter, year2019, year2018Filter, year2018, year2010Filter, year2010}) {
+function FilmsFilter ({items, americanFilter, americanonly, frenchFilter, frenchonly, spainFilter, spainonly, year2019Filter, year2019, year2018Filter, year2018, year2010Filter, year2010, onChangeHandler, input}) {
 	return (
 		<div className='filmsfilter'>
 			<div className='filter_title'>
 				<label htmlFor='title '>Nom du film :</label>
-				<input id='title' type='text' />
+				<input id='title' type='text' value={input} onChange={onChangeHandler}/>
 			</div>
 			<div className='filter_origin'>
 				<p>Origin :</p>
@@ -21,9 +21,7 @@ function FilmsFilter ({items, americanFilter, americanonly, frenchFilter, french
 				<button className='button_year' onClick={year2018Filter}>2018</button>
 				<button className='button_year' onClick={year2010Filter}>2010</button>
 			</div>
-			{/* { americanonly ? '' : <img src={items.items.movies[14].posterUrl} alt='test' />} */}
 			<div className='testcard'>
-				{console.log(items.movies)}
 				{americanonly
 					? items.movies
 						.filter(movie => movie.country === 'United_States')
@@ -48,16 +46,13 @@ function FilmsFilter ({items, americanFilter, americanonly, frenchFilter, french
 					? items.movies
 						.filter(movie => movie.year === 2010)
 						.map((movie, index) => <Card {...movie} />)
-					: items.movies.map((movie, index) => (
+					: items.movies
+						.filter(movie => input === '' || movie.title.includes(input))
+						.map((movie, index) => (
 							<Card {...movie} />
 						))
 				}
 			</div>
-						
-
-
-
-
 		</div>
 	)
 

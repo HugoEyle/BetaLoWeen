@@ -14,6 +14,7 @@ class Home extends React.Component {
       year2019: false,
       year2018: false,
       year2010: false,
+      input: '',
     }
     this.americanFilter = this.americanFilter.bind(this)
     this.frenchFilter = this.frenchFilter.bind(this)
@@ -21,6 +22,7 @@ class Home extends React.Component {
     this.year2019Filter = this.year2019Filter.bind(this)
     this.year2018Filter = this.year2018Filter.bind(this)
     this.year2010Filter = this.year2010Filter.bind(this)
+    this.onChangeHandler = this.onChangeHandler.bind(this)
   }
 
   americanFilter() {
@@ -47,6 +49,10 @@ class Home extends React.Component {
     this.setState({ year2010 : !this.state.year2010 })
   }
 
+  onChangeHandler(event) {
+    this.setState({ input : event.target.value })
+  }
+
   componentDidMount () {
     fetch('http://hackathon-wild-hackoween.herokuapp.com/movies')
       .then(res => res.json())
@@ -59,8 +65,8 @@ class Home extends React.Component {
   
   render() {
     
-    const { isLoaded, items, americanonly, frenchonly, spainonly, year2019, year2018, year2010} = this.state
-    console.log(items)
+    const { isLoaded, items, americanonly, frenchonly, spainonly, year2019, year2018, year2010, input} = this.state
+    
     if (!isLoaded) {
       return <h2>Loading...</h2>;
     } else {
@@ -68,7 +74,7 @@ class Home extends React.Component {
       return (
           <div className='Home'>
             <p>{items.movies[0].title}</p>
-            <FilmsFilter items={items} americanFilter={this.americanFilter} americanonly={americanonly} frenchFilter={this.frenchFilter} frenchonly={frenchonly} spainFilter={this.spainFilter} spainonly={spainonly} year2019Filter={this.year2019Filter} year2019={year2019} year2018Filter={this.year2018Filter} year2018={year2018} year2010Filter={this.year2010Filter} year2010={year2010} />
+            <FilmsFilter items={items} americanFilter={this.americanFilter} americanonly={americanonly} frenchFilter={this.frenchFilter} frenchonly={frenchonly} spainFilter={this.spainFilter} spainonly={spainonly} year2019Filter={this.year2019Filter} year2019={year2019} year2018Filter={this.year2018Filter} year2018={year2018} year2010Filter={this.year2010Filter} year2010={year2010} onChangeHandler={this.onChangeHandler} input={input} />
           </div>
       )
     }
