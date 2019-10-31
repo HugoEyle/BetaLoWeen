@@ -22,7 +22,7 @@ function FilmsFilter ({items, americanFilter, americanonly, frenchFilter, french
 				<div className='filter_year'>
 					<p className='title_filter'>Years :</p>
 					<button className='button_year' onClick={year2019Filter}>2019</button>
-					<button className='button_year' onClick={year2018Filter}>2018</button>
+					<button className='button_year' onClick={year2018Filter}>2011</button>
 					<button className='button_year' onClick={year2010Filter}>2010</button>
 				</div>
 			</div>
@@ -45,7 +45,7 @@ function FilmsFilter ({items, americanFilter, americanonly, frenchFilter, french
 						.map((movie, index) => <Card {...movie} />)
 					: year2018
 					? items.movies
-						.filter(movie => movie.year === 2018)
+						.filter(movie => movie.year === 2011)
 						.map((movie, index) => <Card {...movie} />)
 					: year2010
 					? items.movies

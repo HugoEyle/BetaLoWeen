@@ -29,36 +29,54 @@ class Home extends React.Component {
     this.setState({ americanonly : !this.state.americanonly })
     this.setState({ frenchonly : false })
     this.setState({ spainonly : false })
+    this.setState({ year2010 : false })
+    this.setState({ year2019 : false })
+    this.setState({ year2018 : false })
   }
 
   frenchFilter() {
     this.setState({ frenchonly : !this.state.frenchonly })
     this.setState({ americanonly : false })
     this.setState({ spainonly : false })
+    this.setState({ year2010 : false })
+    this.setState({ year2019 : false })
+    this.setState({ year2018 : false })
   }
 
   spainFilter() {
     this.setState({ spainonly : !this.state.spainonly })
     this.setState({ frenchonly : false })
     this.setState({ americanonly : false })
+    this.setState({ year2010 : false })
+    this.setState({ year2019 : false })
+    this.setState({ year2018 : false })
   }
 
   year2019Filter() {
     this.setState({ year2019 : !this.state.year2019 })
     this.setState({ year2018 : false })
     this.setState({ year2010 : false })
+    this.setState({ frenchonly : false })
+    this.setState({ spainonly : false })
+    this.setState({ americanonly : false })
   }
 
   year2018Filter() {
     this.setState({ year2018 : !this.state.year2018 })
     this.setState({ year2010 : false })
     this.setState({ year2019 : false })
+    this.setState({ frenchonly : false })
+    this.setState({ spainonly : false })
+    this.setState({ americanonly : false })
   }
 
   year2010Filter() {
     this.setState({ year2010 : !this.state.year2010 })
     this.setState({ year2018 : false })
     this.setState({ year2019 : false })
+    this.setState({ frenchonly : false })
+    this.setState({ spainonly : false })
+    this.setState({ americanonly : false })
   }
 
   onChangeHandler(event) {
