@@ -11,6 +11,7 @@ export default class NavHeader extends Component {
                             <Navigation>
                                 <a href="#">Home</a>
                                 <a href="#">Movies</a>
+                                <a href="https://thumbs.gfycat.com/LoathsomeVioletIrishdraughthorse-mobile.mp4">Ma sélec'</a>
                                 <Textfield
                                     onChange={() => {}}
                                     label="Expandable Input"
@@ -23,6 +24,7 @@ export default class NavHeader extends Component {
                             <Navigation>
                                 <a href="#">Home</a>
                                 <a href="#">Movies</a>
+                                <a href="https://thumbs.gfycat.com/LoathsomeVioletIrishdraughthorse-mobile.mp4">Ma sélec'</a>
                                 <Textfield
                                     onChange={() => {}}
                                     label="Expandable Input"

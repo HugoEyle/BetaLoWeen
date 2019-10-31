@@ -5,7 +5,7 @@ import "./MovieList.css";
 function MovieList(items) {
   return (
     <div>
-      <h2 className="titleList">Films américains</h2>
+      <h2 className="titleAmericanList">Films américains</h2>
       <div className="americanList">
       {items.items.movies.filter(movie => 
         movie.country === 'United_States')
@@ -13,7 +13,7 @@ function MovieList(items) {
         .map(movie => 
         <MovieCard {...movie} />)} 
       </div>
-      <h2 className="titleList">Films d'autres horizons</h2>
+      <h2 className="titleList">Films d'autres pays</h2>
       <div className="frenchList">
       {items.items.movies.filter(movie =>
         movie.country !== 'United_States')
