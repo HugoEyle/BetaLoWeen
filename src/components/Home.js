@@ -93,7 +93,7 @@ class Home extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://hackathon-wild-hackoween.herokuapp.com/movies')
+    fetch('https://hackathon-wild-hackoween.herokuapp.com/movies')
       .then(res => res.json())
       .then(json =>
         this.setState({
