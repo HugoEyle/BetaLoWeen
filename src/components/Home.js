@@ -104,7 +104,7 @@ class Home extends React.Component {
   
   render() {
     
-    const { isLoaded, items, americanonly, frenchonly, spainonly, year2019, year2018, year2010, input} = this.state
+    const { items, americanonly, frenchonly, spainonly, year2019, year2018, year2010, input} = this.state
 
       return (
         <div className="Home">
@@ -117,6 +117,6 @@ class Home extends React.Component {
       );
     }
   }
-}
+
 
 export default Home;
