@@ -106,10 +106,6 @@ class Home extends React.Component {
     
     const { isLoaded, items, americanonly, frenchonly, spainonly, year2019, year2018, year2010, input} = this.state
 
-    if (!isLoaded) {
-      return <h2>Loading...</h2>;
-    } else {
-      //console.log(items.movies.filter(movies => movies.country === 'United_States'))
       return (
         <div className="Home">
           <NavHeader />
