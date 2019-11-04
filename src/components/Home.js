@@ -104,8 +104,11 @@ class Home extends React.Component {
   
   render() {
     
-    const { items, americanonly, frenchonly, spainonly, year2019, year2018, year2010, input} = this.state
+    const { isLoaded, items, americanonly, frenchonly, spainonly, year2019, year2018, year2010, input} = this.state
 
+    if (!isLoaded) {
+      return <h2>Loading...</h2>;
+    } else {
       return (
         <div className="Home">
           <NavHeader />
@@ -117,6 +120,6 @@ class Home extends React.Component {
       );
     }
   }
-
+}
 
 export default Home;
